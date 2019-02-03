@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.hooitis.hoo.eyenosemouse.vm.QuizItemVM"/>
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+                android:id="@+id/quiz_cont"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent="0.75"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                    android:id="@+id/left_eye"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    imageResUri="@{viewModel.leftEye}"
+                    android:contentDescription="@string/female"
+                    app:layout_constraintWidth_percent="0.20"
+                    app:layout_constraintDimensionRatio="1:0.6"
+                    app:layout_constraintTop_toTopOf="@+id/nose"
+                    app:layout_constraintBottom_toBottomOf="@+id/nose"
+                    app:layout_constraintEnd_toStartOf="@+id/nose"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                    android:id="@+id/nose"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    imageResUri="@{viewModel.nose}"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="2dp"
+                    app:layout_constraintWidth_percent="0.3"
+                    app:layout_constraintDimensionRatio="1:1.6"
+                    android:contentDescription="@string/female"
+                    app:layout_constraintStart_toEndOf="@+id/left_eye"
+                    app:layout_constraintEnd_toStartOf="@+id/right_eye"
+            />
+
+            <ImageView
+                    android:id="@+id/right_eye"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    imageResUri="@{viewModel.rightEye}"
+                    app:layout_constraintWidth_percent="0.2"
+                    app:layout_constraintDimensionRatio="1:0.6"
+                    android:contentDescription="@string/female"
+                    app:layout_constraintTop_toTopOf="@+id/nose"
+                    app:layout_constraintBottom_toBottomOf="@+id/nose"
+                    app:layout_constraintStart_toEndOf="@+id/nose"
+                    app:layout_constraintEnd_toEndOf="parent"
+            />
+
+            <ImageView
+                    android:id="@+id/mouse"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    imageResUri="@{viewModel.mouse}"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintWidth_percent="0.7"
+                    app:layout_constraintDimensionRatio="1:0.3"
+                    android:contentDescription="@string/female"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nose"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
